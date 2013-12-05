@@ -50,6 +50,7 @@
 -(void)resetGraph;
 
 // set an array of alues to be displayed in a the graph
+//array of equally spaced floats
 -(void)setArray:(NSArray*)array ;
 
 // set the spacing from the max value in graph array to top of view. default = 10.

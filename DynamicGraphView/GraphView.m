@@ -214,7 +214,7 @@
     CGPoint leftBottom = CGPointMake(0, self.frame.size.height);
     CGPoint rightBottom = CGPointMake(self.frame.size.width, self.frame.size.height);
     
-    NSMutableArray *points = [[self arrayOfPoints] mutableCopy];
+    NSMutableArray *points = [[self arrayOfPoints] mutableCopy]; //TODO: Stop O(n) logic here
     
     // Add control points to make the math make sense
     [points insertObject:points[0] atIndex:0];
@@ -300,7 +300,7 @@
         }
         [points addObject:[NSValue valueWithCGPoint:p]];
         
-        NSLog(@"point: %@", NSStringFromCGPoint(p));
+//        NSLog(@"point: %@", NSStringFromCGPoint(p));
     }
     
     return points;
