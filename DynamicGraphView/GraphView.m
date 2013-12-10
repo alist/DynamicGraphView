@@ -310,10 +310,15 @@
 // this is where the dynamic height of the graph is calculated
 -(void)calculateHeight {
     
-    int minValue = [[pointArray valueForKeyPath:@"@min.self"] integerValue];
-    int maxValue = [[pointArray valueForKeyPath:@"@max.self"] integerValue];
+    NSInteger minValue = [[pointArray valueForKeyPath:@"@min.self"] integerValue];
+    NSInteger maxValue = [[pointArray valueForKeyPath:@"@max.self"] integerValue];
     
-    dy = maxValue + abs(minValue) + spacing;
+    
+    if (self.manualY > 0){
+        dy = self.manualY;
+    } else{
+        dy = maxValue + abs((int)minValue) + spacing;
+    }
     
     // set maxValue and round the float
     [max setText:[NSString stringWithFormat:@"%i", (int)(dy + 0.0) ]];

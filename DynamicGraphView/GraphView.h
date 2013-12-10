@@ -43,6 +43,10 @@
     
 }
 
+//forces a particular value to be max height of graph
+//manualY, if zero, is instead automatic
+@property(nonatomic, assign) float manualY;
+
 // add point to the array dynamically
 -(void)setPoint:(float)point;
 
